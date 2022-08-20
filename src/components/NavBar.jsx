@@ -4,18 +4,18 @@ import MeetingRoomRoundedIcon from '@mui/icons-material/MeetingRoomRounded';
 import { useRouter } from 'next/router'
 import { useUsers } from "../hooks/useUsers"
 
-const NavBar = () => {
+const NavBar = ( timer ) => {
 
     const router = useRouter()
-
     const usersQuery = useUsers()
 
-    const handleRefetchUsers = async () => {
+    const goHome = async () => {
         const data = await usersQuery.refetch()
         router.push('/')
     }
 
     const logout = () => {
+        clearTimeout(timer);
         localStorage.removeItem('token')
         router.push('/login')
     }
@@ -35,7 +35,7 @@ const NavBar = () => {
                     color="inherit"
                     aria-label="menu"
                     sx={{ mr: 2 }}
-                    onClick={handleRefetchUsers}
+                    onClick={goHome}
                 >
                     <HomeIcon />
                 </IconButton>
@@ -46,7 +46,7 @@ const NavBar = () => {
                         flexGrow: 1,
                         cursor: 'pointer'
                     }}
-                    onClick={handleRefetchUsers}
+                    onClick={goHome}
                 >
                     Home
                 </Typography>

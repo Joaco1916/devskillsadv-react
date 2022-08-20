@@ -26,7 +26,7 @@ export const addUser = async (
     return response.data
 }
 
-const FormInputComponent = ({handleAddUser}) => {
+const FormInputComponent = ({handleAddUser, timer, handleTimer}) => {
     const [ firstName, setFirstName ] = useState('')
     const [ lastName, setLastName ] = useState('')
     const [ address, setAddress ] = useState('')
@@ -34,7 +34,6 @@ const FormInputComponent = ({handleAddUser}) => {
     const [ updating, setUpdating ] = useState(false)
     const [ error, setError ] = useState(false)
     const [ msg, setMsg ] = useState('')
-    const [ timer, setTimer ] = useState(null)
 
     const usersQuery = useUsers()
     const timeStop = 120000
@@ -44,7 +43,7 @@ const FormInputComponent = ({handleAddUser}) => {
         let temp_timer = setTimeout(() => {
             handleRefetchUsers()
         }, timeStop)
-        setTimer(temp_timer)
+        handleTimer(temp_timer)
     }
 
     const resetTimer = () => {
@@ -52,7 +51,7 @@ const FormInputComponent = ({handleAddUser}) => {
         let temp_timer = setTimeout(() => {
             handleRefetchUsers()
         }, timeStop)
-        setTimer(temp_timer)
+        handleTimer(temp_timer)
     }
 
     const handleFirstName = (e) => { 

@@ -1,3 +1,4 @@
+//Traje esta logica del back al front para evitar requests innecesarias.
 const wellformed = (ssn) => {
     const regex = /^\d{3}-\d{2}-\d{4}$/
     return regex.test(ssn)

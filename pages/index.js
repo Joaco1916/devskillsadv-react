@@ -5,12 +5,18 @@ import NavBar from '../src/components/NavBar'
 import { useUsers } from "../src/hooks/useUsers"
 import { Box, CircularProgress } from "@mui/material"
 import { useRouter } from 'next/router'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 export default function Home() {
   
   const users = useUsers()
   const router = useRouter();
+
+  const [ timer, setTimer ] = useState(null)
+
+  const handleTimer = (newTimer) => {
+    setTimer(newTimer)
+  }
 
   useEffect( () => {
     const token = localStorage.getItem('token')
@@ -24,7 +30,7 @@ export default function Home() {
         <meta name="description" content="Created by Joaquin Rodriguez" />
       </Head>
 
-      <NavBar />
+      <NavBar timer={timer}/>
       { users.status != 'error' && users.status != 'success' ?
         <Box
           sx={{
@@ -37,7 +43,7 @@ export default function Home() {
           <CircularProgress sx={{ color: 'green'}}/>
         </Box>
         :
-        <FormsComponent users={ users.status == 'success' ? users.data : null }/>
+        <FormsComponent users={ users.status == 'success' ? users.data : null } timer={timer} handleTimer={handleTimer}/>
       }
 
       <Footer />

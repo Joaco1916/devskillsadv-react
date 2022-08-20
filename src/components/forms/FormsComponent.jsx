@@ -23,7 +23,7 @@ const FormsComponent = (props) => {
         >
             <Grid container spacing={8}>
                 <Grid item xs={12} lg={4}>
-                    <FormInputComponent handleAddUser={handleAddUser}/>
+                    <FormInputComponent handleAddUser={handleAddUser} timer={props.timer} handleTimer={props.handleTimer}/>
                 </Grid>
                 <Grid item xs={12} lg={8}>
                     <FormDataTable users={usersLocal}/>

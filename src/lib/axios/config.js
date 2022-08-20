@@ -28,9 +28,4 @@ createAuthRefreshInterceptor(axios, failedRequest =>
         }),
 );
 
-export const setToken = token => {
-    if (!token) return
-    axios.defaults.headers.common['Authorization'] = `${token.type} ${token.value}`
-};
-
 export default axios
