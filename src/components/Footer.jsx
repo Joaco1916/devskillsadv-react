@@ -13,8 +13,8 @@ const Footer = () => {
                 width: '100%'
             }}
         >
-            <Typography color={'#ffffff'}>Copyright</Typography>
-            <Typography color={'#ffffff'}>All rights reserved</Typography>
+            <Typography data-testid = 'footer-copyright-label' color={'#ffffff'}>Copyright</Typography>
+            <Typography data-testid = 'footer-right-reserved-label' color={'#ffffff'}>All rights reserved</Typography>
         </Box>
     )
 }

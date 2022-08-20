@@ -124,10 +124,10 @@ const FormInputComponent = ({handleAddUser}) => {
                     gap:2
                 }}
             >
-                <TextField id="first-name" label={'First Name'} value={firstName} placeholder="First Name" onChange={handleFirstName} variant="outlined" />
-                <TextField id="last-name" label={'Last Name'} value={lastName} placeholder="Last Name" onChange={handleLastName} variant="outlined" />
-                <TextField id="address" label={'Address'} value={address} placeholder="Address" onChange={handleAddress} variant="outlined" />
-                <TextField id="ssn" label={'SSN'} value={SSN} placeholder="SSN" onChange={handleSSN} variant="outlined" />
+                <TextField data-testid='forms-first-name-input' label={'First Name'} value={firstName} placeholder="First Name" onChange={handleFirstName} variant="outlined" />
+                <TextField data-testid='forms-last-name-input' label={'Last Name'} value={lastName} placeholder="Last Name" onChange={handleLastName} variant="outlined" />
+                <TextField data-testid='forms-address-input' label={'Address'} value={address} placeholder="Address" onChange={handleAddress} variant="outlined" />
+                <TextField data-testid='forms-ssn-input' label={'SSN'} value={SSN} placeholder="SSN" onChange={handleSSN} variant="outlined" />
             </Box>
             <Box
                 sx={{

@@ -14,5 +14,5 @@ const fetchUsers = async () => {
 };
 
 export function useUsers() {
-    return useQuery(['users'], fetchUsers)
+    return useQuery(['users'], fetchUsers, {refetchOnWindowFocus: false} )
 }

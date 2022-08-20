@@ -29,6 +29,7 @@ const NavBar = () => {
         >
             <Toolbar>
                 <IconButton
+                    data-testid = 'navbar-home-logo-button'
                     size="large"
                     edge="start"
                     color="inherit"
@@ -38,7 +39,8 @@ const NavBar = () => {
                 >
                     <HomeIcon />
                 </IconButton>
-                <Typography 
+                <Typography
+                    data-testid = 'navbar-home-label-button'
                     variant="h6" 
                     sx={{ 
                         flexGrow: 1,
@@ -48,13 +50,15 @@ const NavBar = () => {
                 >
                     Home
                 </Typography>
-                <Button 
+                <Button
+                    data-testid = 'navbar-other-page-button'
                     color="inherit"
                     onClick={() => {router.push('/other-page')}}
                 >
                     Other page
                 </Button>
                 <IconButton
+                    data-testid = 'navbar-logout-button'
                     size="large"
                     edge="start"
                     color="inherit"

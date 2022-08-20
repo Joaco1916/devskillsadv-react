@@ -27,3 +27,5 @@ Este es el projecto que se utilizo para la API y se encuentra en este repositori
 * Axios - [docs](https://axios-http.com/docs/intro)
 * Axios-auth-refresh - [docs](https://github.com/Flyrell/axios-auth-refresh#readme)
 * ReactQuery - [docs](https://react-query-v3.tanstack.com/overview)
+* Jest - [docs](https://jestjs.io/docs/tutorial-react)
+* React-testing-library - [docs](https://testing-library.com/docs/react-testing-library/intro/)

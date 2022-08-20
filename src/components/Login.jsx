@@ -104,6 +104,7 @@ const Login = () => {
                     }}
                 >
                     <Button
+                        data-testid = 'login-button'
                         sx={{
                             border:'1px solid #000000',
                             borderRadius:8,

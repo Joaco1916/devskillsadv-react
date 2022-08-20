@@ -21,7 +21,7 @@ const FormsComponent = (props) => {
                 p:8,
             }}
         >
-            <Grid container spacing={2}>
+            <Grid container spacing={8}>
                 <Grid item xs={12} lg={4}>
                     <FormInputComponent handleAddUser={handleAddUser}/>
                 </Grid>
