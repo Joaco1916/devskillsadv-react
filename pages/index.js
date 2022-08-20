@@ -4,10 +4,18 @@ import FormsComponent from '../src/components/forms/FormsComponent'
 import NavBar from '../src/components/NavBar'
 import { useUsers } from "../src/hooks/useUsers"
 import { Box, CircularProgress } from "@mui/material"
+import { useRouter } from 'next/router'
+import { useEffect } from 'react'
 
 export default function Home() {
   
   const users = useUsers()
+  const router = useRouter();
+
+  useEffect( () => {
+    const token = localStorage.getItem('token')
+    if( token == null) router.push('/login')
+  })
 
   return (
     <div>

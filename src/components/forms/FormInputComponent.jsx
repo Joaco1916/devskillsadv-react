@@ -1,5 +1,5 @@
 import { TextField, Button, Box, Typography } from "@mui/material"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import axios from '../../lib/axios/config'
 import { useUsers } from "../../hooks/useUsers"
 import { inputsChecker } from "../../utils/utils"
