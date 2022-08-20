@@ -6,11 +6,10 @@ import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 
 export default function OtherPage() {
-
-  const token = localStorage.getItem('token')
   const router = useRouter();
 
   useEffect( () => {
+    const token = localStorage.getItem('token')
     if( token == null) router.push('/login')
   })
 
